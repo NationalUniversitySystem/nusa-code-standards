@@ -17,7 +17,7 @@ To add these standards (without getting rid of other standards), add the WordPre
 - Suggestion: Clone all standards into one folder.
 - Although all standards might be inside a folder (e.g. `code-standards`), each folder (repo) inside of it has to be added uniquely.
 - When installing multiple paths *do not* add spaces between each path (after the comma separating them)
-- If having issues wrap the the combined string in quotes (e.g. `"/path/to/one,/path/to/two"`).
+- If having issues wrap the combined string in quotes (e.g. `"/path/to/one,/path/to/two"`).
 - Use full path for each repo/folder. For example:
   - Mac: `"/Users/{yourusername}/path/one,/Users/{yourusername}/path/two"`
   - Windows: `"C:/Users/{yourusername}/path/one,C:/Users/{yourusername}/path/two"`
