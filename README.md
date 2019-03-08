@@ -29,4 +29,13 @@ To add these standards (without getting rid of other standards), add the WordPre
 - [linter-phpcs](https://atom.io/packages/linter-phpcs) package for Atom
 - [phpcs](https://packagecontrol.io/packages/Phpcs) package for Sublime Text
 - `phpcs --config-show` to see all configured options
-- The `default_standard` standard displayed by the command above in your command line (even inside the bash CLI of VS Code) will show the standard defined for your whole machine. On the other hand, the standard defined in the settings of your code editor is for the inline code sniffing done by the code editor's extension/add-on.
+- The `default_standard` standard displayed by the command above in your command line (even inside the bash CLI of VS Code) will show the standard defined for your whole machine. On the other hand, the standard defined in the settings of your code editor is for the inline code sniffing done by the code editor's extension/add-on
+- Please use the following feature sparingly unless you have enough experience with the tool:
+  - PHP Code Beautifier and Fixer (`phpcbf`) is instealled along with PHPCS and can be run like `phpcs` to automatically fix certain errors and warnings
+  - Reasons to use this sparingly are things may break, and fixing things manually is a good way of learning and get better at following the code standards
+
+
+## Making Changes to Rulesets
+Please discuss any possible rule changes with team members inside a repo issue for tracking. To see the specific code standard that is throwing an error that might be removed, changed, run `phpcs {filename.php} -s`. Use the string of the rule as reference in issues and finally when implementing a change.
+
+To keep things organized, create a branch to make a change to the rulesets and then merge into `master`.
