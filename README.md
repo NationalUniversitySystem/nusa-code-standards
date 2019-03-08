@@ -10,7 +10,7 @@ Here you will find the coding standards that should be used by all members for s
 ## Installation and Adding NUSA Standards
 Make sure you have [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) installed on your machine. Follow the main installation instructions from [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer#installation).
 
-These standards also require for the standard [WordPress](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) and WordPress-VIP-Go standards to be installed.
+These standards also require for the standard [WordPress](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) and [WordPress-VIP-Go](https://github.com/Automattic/VIP-Coding-Standards) standards to be installed.
 
 To add these standards (without getting rid of other standards), add the WordPress, WordPress VIP, and NUSA standards following the [PHPCS wiki instructions](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options#setting-the-installed-standard-paths).
 
