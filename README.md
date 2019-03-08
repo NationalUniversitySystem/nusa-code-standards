@@ -25,9 +25,10 @@ To add these standards (without getting rid of other standards), add the WordPre
 ## Tips and Recommendations
 - `NUSA-WP` - For use with WordPress projects outside of VIP platform. e.g. Pantheon sites
 - `NUSA-WP-VIP` - For use with VIP WordPress sites
-- [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs) plugin for Visual Studio Code
-- [linter-phpcs](https://atom.io/packages/linter-phpcs) package for Atom
-- [phpcs](https://packagecontrol.io/packages/Phpcs) package for Sublime Text
+- Install a code editor inline linter so you do not have to run `phpcs` commands in the command line frequently, as well as cleaning up after yourself as you code instead of after finishing tasks.
+  - [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs) plugin for Visual Studio Code
+  - [linter-phpcs](https://atom.io/packages/linter-phpcs) package for Atom
+  - [phpcs](https://packagecontrol.io/packages/Phpcs) package for Sublime Text
 - `phpcs --config-show` to see all configured options
 - The `default_standard` standard displayed by the command above in your command line (even inside the bash CLI of VS Code) will show the standard defined for your whole machine. On the other hand, the standard defined in the settings of your code editor is for the inline code sniffing done by the code editor's extension/add-on
 - Please use the following feature sparingly unless you have enough experience with the tool:
