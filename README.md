@@ -25,7 +25,7 @@ To add these standards (without getting rid of other standards), add the WordPre
 ## Tips and Recommendations
 - `NUSA-WP` - For use with WordPress projects outside of VIP platform. e.g. Pantheon sites
 - `NUSA-WP-VIP` - For use with VIP WordPress sites
-- Install a inline linter for your code editor so you do not have to run `phpcs` commands in the command line frequently, as well as cleaning up after yourself as you code instead of after finishing tasks.
+- Install an inline linter for your code editor so you do not have to run `phpcs` commands in the command line frequently, as well as cleaning up after yourself as you code instead of after finishing tasks.
   - [phpcs](https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs) plugin for Visual Studio Code
   - [linter-phpcs](https://atom.io/packages/linter-phpcs) package for Atom
   - [phpcs](https://packagecontrol.io/packages/Phpcs) package for Sublime Text
