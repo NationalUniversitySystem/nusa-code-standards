@@ -2,6 +2,12 @@
 <ruleset name="NUSA-WP">
 	<description>NUSA-WP Standards</description>
 
+	<config name="error-severity" value="1" />
+	<config name="warning-severity" value="1" />
+
+	<exclude-pattern>/vendor/</exclude-pattern>
+	<exclude-pattern>/node_modules/</exclude-pattern>
+
 	<!-- Include the base WordPress ruleset -->
 	<rule ref="WordPress"/>
 
