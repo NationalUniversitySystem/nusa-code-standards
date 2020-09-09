@@ -8,19 +8,31 @@ Here you will find the coding standards that should be used by all members for s
 - Standards from the community and technology.
 
 ## Installation and Adding NUSA Standards
-Make sure you have [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) installed on your machine. Follow the main installation instructions from [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer#installation).
+Make sure you have [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer) _globally_ installed on your machine. Follow the main installation instructions from [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer#installation).
 
-These standards also require for the standard [WordPress](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) and [WordPress-VIP-Go](https://github.com/Automattic/VIP-Coding-Standards) standards to be installed.
+We have a slightly modified version of the WP and WPVIP standards for our team, [NUSA standards](https://github.com/NationalUniversitySystem/nusa-code-standards). To simplify the process of using these standards, these should be installed as a global composer package.
+Highlights:
+- The package will install all other required standards ([WordPress](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) and [WordPress-VIP-Go](https://github.com/Automattic/VIP-Coding-Standards) standards).
+- It also installs the [PHP_CodeSniffer Standards Composer Installer Plugin](https://github.com/dealerdirect/phpcodesniffer-composer-installer) which will automatically install globally required composer standards.
 
-To add these standards (without getting rid of other standards), add the WordPress, WordPress VIP, and NUSA standards following the [PHPCS wiki instructions](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options#setting-the-installed-standard-paths).
+### Method 1
+To install:
+- If you are updating and have standards installed already, run `phpcs --config-delete installed_paths`
+- Since the code standards are in a version control system (VCS), in this case GitHub, we have to set up a property first in our global `composer.json` file. Run `composer global config repositories.nusa-code-standards vcs https://github.com/nationaluniversitysystem/nusa-code-standards`.
+- Finally `composer global require nationaluniversitysystem/nusa-code-standards`.
 
-- Suggestion: Clone all standards into one folder.
-- Although all standards might be inside a folder (e.g. `code-standards`), each folder (repo) inside of it has to be added uniquely.
-- When installing multiple paths *do not* add spaces between each path (after the comma separating them)
-- If having issues wrap the combined string in quotes (e.g. `"/path/to/one,/path/to/two"`).
-- Use full path for each repo/folder. For example:
-  - Mac: `"/Users/{yourusername}/path/one,/Users/{yourusername}/path/two"`
-  - Windows: `"C:/Users/{yourusername}/path/one,C:/Users/{yourusername}/path/two"`
+Now all required packages should be installed and the paths for the standards configured (by **PHP_CodeSniffer Standards Composer Installer Plugin**).
+
+Next, set up specific configs for use:
+- `phpcs --config-set default_standard NUSA-WP-VIP`
+- `phpcs --config-set colors 1`
+- `phpcs --config-set error_severity 1`
+- `phpcs --config-set warning_severity 1`
+
+Confirm the settings were set with `phpcs --config-show`.
+
+### Method 2
+- Download and run the included bash script `install.sh` (not guaranteed to work for everyone).
 
 ## Tips and Recommendations
 - `NUSA-WP` - For use with WordPress projects outside of VIP platform. e.g. Pantheon sites
@@ -35,6 +47,14 @@ To add these standards (without getting rid of other standards), add the WordPre
   - PHP Code Beautifier and Fixer (`phpcbf`) is instealled along with PHPCS and can be run like `phpcs` to automatically fix certain errors and warnings
   - Reasons to use this sparingly are things may break, and fixing things manually is a good way of learning and get better at following the code standards
 
+### Non Composer installed code standards
+- Suggestion: Clone all standards into one folder.
+- Although all standards might be inside a folder (e.g. `code-standards`), each folder (repo) inside of it has to be added uniquely.
+- When installing multiple paths *do not* add spaces between each path (after the comma separating them)
+- If having issues wrap the combined string in quotes (e.g. `"/path/to/one,/path/to/two"`).
+- Use full path for each repo/folder. For example:
+  - Mac: `"/Users/{yourusername}/path/one,/Users/{yourusername}/path/two"`
+  - Windows: `"C:/Users/{yourusername}/path/one,C:/Users/{yourusername}/path/two"`
 
 ## Making Changes to Rulesets
 Please discuss any possible rule changes with team members inside a repo issue for tracking. To see the specific code standard that is throwing an error that might be removed, changed, run `phpcs {filename.php} -s`. Use the string of the rule as reference in issues and finally when implementing a change.
